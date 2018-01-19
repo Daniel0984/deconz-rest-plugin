@@ -13,43 +13,43 @@
 
 static const Sensor::ButtonMap deLightingSwitchMap[] = {
 //    mode                          ep    cluster cmd   param button                                       name
-    { Sensor::ModeTwoGroups,        0x01, 0x0006, 0x01, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
-    { Sensor::ModeTwoGroups,        0x01, 0x0006, 0x00, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
-    { Sensor::ModeTwoGroups,        0x01, 0x0008, 0x05, 0,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD,           "Dimm up" },
-    { Sensor::ModeTwoGroups,        0x01, 0x0008, 0x03, 0,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
-    { Sensor::ModeTwoGroups,        0x01, 0x0008, 0x01, 1,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD,           "Dimm down" },
-    { Sensor::ModeTwoGroups,        0x01, 0x0008, 0x03, 1,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
+    { Sensor::ModeTwoGroups,        0x01, ONOFF_CLUSTER_ID, ONOFF_COMMAND_ON, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
+    { Sensor::ModeTwoGroups,        0x01, ONOFF_CLUSTER_ID, ONOFF_COMMAND_OFF, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
+    { Sensor::ModeTwoGroups,        0x01, LEVEL_CLUSTER_ID, 0x05, 0,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD,           "Dimm up" },
+    { Sensor::ModeTwoGroups,        0x01, LEVEL_CLUSTER_ID, 0x03, 0,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
+    { Sensor::ModeTwoGroups,        0x01, LEVEL_CLUSTER_ID, 0x01, 1,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD,           "Dimm down" },
+    { Sensor::ModeTwoGroups,        0x01, LEVEL_CLUSTER_ID, 0x03, 1,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
 
-    { Sensor::ModeTwoGroups,        0x02, 0x0006, 0x01, 0,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
-    { Sensor::ModeTwoGroups,        0x02, 0x0006, 0x00, 0,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
-    { Sensor::ModeTwoGroups,        0x02, 0x0008, 0x05, 0,    S_BUTTON_3 + S_BUTTON_ACTION_HOLD,           "Dimm up" },
-    { Sensor::ModeTwoGroups,        0x02, 0x0008, 0x03, 0,    S_BUTTON_3 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
-    { Sensor::ModeTwoGroups,        0x02, 0x0008, 0x01, 1,    S_BUTTON_4 + S_BUTTON_ACTION_HOLD,           "Dimm down" },
-    { Sensor::ModeTwoGroups,        0x02, 0x0008, 0x03, 1,    S_BUTTON_4 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
+    { Sensor::ModeTwoGroups,        0x02, ONOFF_CLUSTER_ID, ONOFF_COMMAND_ON, 0,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
+    { Sensor::ModeTwoGroups,        0x02, ONOFF_CLUSTER_ID, ONOFF_COMMAND_OFF, 0,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
+    { Sensor::ModeTwoGroups,        0x02, LEVEL_CLUSTER_ID, 0x05, 0,    S_BUTTON_3 + S_BUTTON_ACTION_HOLD,           "Dimm up" },
+    { Sensor::ModeTwoGroups,        0x02, LEVEL_CLUSTER_ID, 0x03, 0,    S_BUTTON_3 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
+    { Sensor::ModeTwoGroups,        0x02, LEVEL_CLUSTER_ID, 0x01, 1,    S_BUTTON_4 + S_BUTTON_ACTION_HOLD,           "Dimm down" },
+    { Sensor::ModeTwoGroups,        0x02, LEVEL_CLUSTER_ID, 0x03, 1,    S_BUTTON_4 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
 
-    { Sensor::ModeScenes,           0x01, 0x0006, 0x01, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
-    { Sensor::ModeScenes,           0x01, 0x0006, 0x00, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
-    { Sensor::ModeScenes,           0x01, 0x0008, 0x05, 0,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD,           "Dimm up" },
-    { Sensor::ModeScenes,           0x01, 0x0008, 0x03, 0,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
-    { Sensor::ModeScenes,           0x01, 0x0008, 0x01, 1,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD,           "Dimm down" },
-    { Sensor::ModeScenes,           0x01, 0x0008, 0x03, 1,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
+    { Sensor::ModeScenes,           0x01, ONOFF_CLUSTER_ID, ONOFF_COMMAND_ON, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
+    { Sensor::ModeScenes,           0x01, ONOFF_CLUSTER_ID, ONOFF_COMMAND_OFF, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
+    { Sensor::ModeScenes,           0x01, LEVEL_CLUSTER_ID, 0x05, 0,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD,           "Dimm up" },
+    { Sensor::ModeScenes,           0x01, LEVEL_CLUSTER_ID, 0x03, 0,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
+    { Sensor::ModeScenes,           0x01, LEVEL_CLUSTER_ID, 0x01, 1,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD,           "Dimm down" },
+    { Sensor::ModeScenes,           0x01, LEVEL_CLUSTER_ID, 0x03, 1,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
 
-    { Sensor::ModeScenes,           0x01, 0x0005, 0x05, 1,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 1" },
-    { Sensor::ModeScenes,           0x01, 0x0005, 0x05, 4,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 4" },
+    { Sensor::ModeScenes,           0x01, SCENE_CLUSTER_ID, 0x05, 1,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 1" },
+    { Sensor::ModeScenes,           0x01, SCENE_CLUSTER_ID, 0x05, 4,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 4" },
 
-    { Sensor::ModeColorTemperature, 0x01, 0x0006, 0x01, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0006, 0x00, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0008, 0x05, 0,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD,           "Dimm up" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0008, 0x03, 0,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0008, 0x01, 1,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD,           "Dimm down" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0008, 0x03, 1,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
+    { Sensor::ModeColorTemperature, 0x01, ONOFF_CLUSTER_ID, ONOFF_COMMAND_ON, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
+    { Sensor::ModeColorTemperature, 0x01, ONOFF_CLUSTER_ID, ONOFF_COMMAND_OFF, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
+    { Sensor::ModeColorTemperature, 0x01, LEVEL_CLUSTER_ID, 0x05, 0,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD,           "Dimm up" },
+    { Sensor::ModeColorTemperature, 0x01, LEVEL_CLUSTER_ID, 0x03, 0,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
+    { Sensor::ModeColorTemperature, 0x01, LEVEL_CLUSTER_ID, 0x01, 1,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD,           "Dimm down" },
+    { Sensor::ModeColorTemperature, 0x01, LEVEL_CLUSTER_ID, 0x03, 1,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
 
-    { Sensor::ModeColorTemperature, 0x01, 0x0300, 0x4b, 0x01FE,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Color temperature move up" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0300, 0x4b, 0x03FE,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Color temperature move down" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0300, 0x4b, 0x0128,    S_BUTTON_3 + S_BUTTON_ACTION_HOLD,           "Color temperature move up hold" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0300, 0x4b, 0x0328,    S_BUTTON_4 + S_BUTTON_ACTION_HOLD,           "Color temperature move down hold" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0300, 0x4b, 0x1028,    S_BUTTON_3 + S_BUTTON_ACTION_LONG_RELEASED,  "Color temperature move up stop" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0300, 0x4b, 0x3028,    S_BUTTON_4 + S_BUTTON_ACTION_LONG_RELEASED,  "Color temperature move down stop" },
+    { Sensor::ModeColorTemperature, 0x01, COLOR_CLUSTER_ID, 0x4b, 0x01FE,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Color temperature move up" },
+    { Sensor::ModeColorTemperature, 0x01, COLOR_CLUSTER_ID, 0x4b, 0x03FE,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Color temperature move down" },
+    { Sensor::ModeColorTemperature, 0x01, COLOR_CLUSTER_ID, 0x4b, 0x0128,    S_BUTTON_3 + S_BUTTON_ACTION_HOLD,           "Color temperature move up hold" },
+    { Sensor::ModeColorTemperature, 0x01, COLOR_CLUSTER_ID, 0x4b, 0x0328,    S_BUTTON_4 + S_BUTTON_ACTION_HOLD,           "Color temperature move down hold" },
+    { Sensor::ModeColorTemperature, 0x01, COLOR_CLUSTER_ID, 0x4b, 0x1028,    S_BUTTON_3 + S_BUTTON_ACTION_LONG_RELEASED,  "Color temperature move up stop" },
+    { Sensor::ModeColorTemperature, 0x01, COLOR_CLUSTER_ID, 0x4b, 0x3028,    S_BUTTON_4 + S_BUTTON_ACTION_LONG_RELEASED,  "Color temperature move down stop" },
 
     // end
     { Sensor::ModeNone,             0x00, 0x0000, 0x00, 0,    0,                                           0 }
@@ -57,17 +57,17 @@ static const Sensor::ButtonMap deLightingSwitchMap[] = {
 
 static const Sensor::ButtonMap deSceneSwitchMap[] = {
 //    mode                          ep    cluster cmd   param button                                       name
-    { Sensor::ModeScenes,           0x01, 0x0006, 0x01, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
-    { Sensor::ModeScenes,           0x01, 0x0006, 0x00, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
-    { Sensor::ModeScenes,           0x01, 0x0008, 0x05, 0,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD,           "Dimm up" },
-    { Sensor::ModeScenes,           0x01, 0x0008, 0x03, 0,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm up stop" },
-    { Sensor::ModeScenes,           0x01, 0x0008, 0x01, 1,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD,           "Dimm down" },
-    { Sensor::ModeScenes,           0x01, 0x0008, 0x03, 1,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm down stop" },
+    { Sensor::ModeScenes,           0x01, ONOFF_CLUSTER_ID, ONOFF_COMMAND_ON, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
+    { Sensor::ModeScenes,           0x01, ONOFF_CLUSTER_ID, ONOFF_COMMAND_OFF, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
+    { Sensor::ModeScenes,           0x01, LEVEL_CLUSTER_ID, 0x05, 0,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD,           "Dimm up" },
+    { Sensor::ModeScenes,           0x01, LEVEL_CLUSTER_ID, 0x03, 0,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm up stop" },
+    { Sensor::ModeScenes,           0x01, LEVEL_CLUSTER_ID, 0x01, 1,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD,           "Dimm down" },
+    { Sensor::ModeScenes,           0x01, LEVEL_CLUSTER_ID, 0x03, 1,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm down stop" },
 
-    { Sensor::ModeScenes,           0x01, 0x0005, 0x05, 1,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 1" },
-    { Sensor::ModeScenes,           0x01, 0x0005, 0x05, 2,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 2" },
-    { Sensor::ModeScenes,           0x01, 0x0005, 0x05, 3,    S_BUTTON_5 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 3" },
-    { Sensor::ModeScenes,           0x01, 0x0005, 0x05, 4,    S_BUTTON_6 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 4" },
+    { Sensor::ModeScenes,           0x01, SCENE_CLUSTER_ID, 0x05, 1,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 1" },
+    { Sensor::ModeScenes,           0x01, SCENE_CLUSTER_ID, 0x05, 2,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 2" },
+    { Sensor::ModeScenes,           0x01, SCENE_CLUSTER_ID, 0x05, 3,    S_BUTTON_5 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 3" },
+    { Sensor::ModeScenes,           0x01, SCENE_CLUSTER_ID, 0x05, 4,    S_BUTTON_6 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 4" },
 
     // end
     { Sensor::ModeNone,             0x00, 0x0000, 0x00, 0,    0,                                           0 }
@@ -75,19 +75,19 @@ static const Sensor::ButtonMap deSceneSwitchMap[] = {
 
 static const Sensor::ButtonMap instaRemoteMap[] = {
 //    mode                          ep    cluster cmd   param button                                       name
-    { Sensor::ModeScenes,           0x01, 0x0006, 0x40, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "Off with effect" },
-    { Sensor::ModeScenes,           0x01, 0x0006, 0x01, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
-    { Sensor::ModeScenes,           0x01, 0x0008, 0x01, 1,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD,           "Dimm up" },
-    { Sensor::ModeScenes,           0x01, 0x0008, 0x03, 1,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
-    { Sensor::ModeScenes,           0x01, 0x0008, 0x01, 0,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD,           "Dimm down" },
-    { Sensor::ModeScenes,           0x01, 0x0008, 0x03, 0,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
+    { Sensor::ModeScenes,           0x01, ONOFF_CLUSTER_ID, 0x40, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "Off with effect" },
+    { Sensor::ModeScenes,           0x01, ONOFF_CLUSTER_ID, ONOFF_COMMAND_ON, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
+    { Sensor::ModeScenes,           0x01, LEVEL_CLUSTER_ID, 0x01, 1,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD,           "Dimm up" },
+    { Sensor::ModeScenes,           0x01, LEVEL_CLUSTER_ID, 0x03, 1,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
+    { Sensor::ModeScenes,           0x01, LEVEL_CLUSTER_ID, 0x01, 0,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD,           "Dimm down" },
+    { Sensor::ModeScenes,           0x01, LEVEL_CLUSTER_ID, 0x03, 0,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" },
 
-    { Sensor::ModeScenes,           0x01, 0x0005, 0x05, 0,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 0" },
-    { Sensor::ModeScenes,           0x01, 0x0005, 0x05, 1,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 1" },
-    { Sensor::ModeScenes,           0x01, 0x0005, 0x05, 2,    S_BUTTON_5 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 2" },
-    { Sensor::ModeScenes,           0x01, 0x0005, 0x05, 3,    S_BUTTON_6 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 3" },
-    { Sensor::ModeScenes,           0x01, 0x0005, 0x05, 4,    S_BUTTON_7 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 4" },
-    { Sensor::ModeScenes,           0x01, 0x0005, 0x05, 5,    S_BUTTON_8 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 5" },
+    { Sensor::ModeScenes,           0x01, SCENE_CLUSTER_ID, 0x05, 0,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 0" },
+    { Sensor::ModeScenes,           0x01, SCENE_CLUSTER_ID, 0x05, 1,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 1" },
+    { Sensor::ModeScenes,           0x01, SCENE_CLUSTER_ID, 0x05, 2,    S_BUTTON_5 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 2" },
+    { Sensor::ModeScenes,           0x01, SCENE_CLUSTER_ID, 0x05, 3,    S_BUTTON_6 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 3" },
+    { Sensor::ModeScenes,           0x01, SCENE_CLUSTER_ID, 0x05, 4,    S_BUTTON_7 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 4" },
+    { Sensor::ModeScenes,           0x01, SCENE_CLUSTER_ID, 0x05, 5,    S_BUTTON_8 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 5" },
 
     // end
     { Sensor::ModeNone,             0x00, 0x0000, 0x00, 0,    0,                                           0 }
@@ -95,12 +95,12 @@ static const Sensor::ButtonMap instaRemoteMap[] = {
 
 static const Sensor::ButtonMap philipsDimmerSwitchMap[] = {
 //    mode                          ep    cluster cmd   param button                                       name
-/*  { Sensor::ModeScenes,           0x01, 0x0006, 0x01, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
-    { Sensor::ModeScenes,           0x01, 0x0006, 0x40, 0,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Off with effect" },
+/*  { Sensor::ModeScenes,           0x01, ONOFF_CLUSTER_ID, 0x01, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
+    { Sensor::ModeScenes,           0x01, ONOFF_CLUSTER_ID, 0x40, 0,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Off with effect" },
 
-    { Sensor::ModeScenes,           0x01, 0x0008, 0x02, 0,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD,           "Step up" },
-    { Sensor::ModeScenes,           0x01, 0x0008, 0x03, 0,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" }, // might be button 2 as well
-    { Sensor::ModeScenes,           0x01, 0x0008, 0x02, 1,    S_BUTTON_3 + S_BUTTON_ACTION_HOLD,           "Step down" },
+    { Sensor::ModeScenes,           0x01, LEVEL_CLUSTER_ID, 0x02, 0,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD,           "Step up" },
+    { Sensor::ModeScenes,           0x01, LEVEL_CLUSTER_ID, 0x03, 0,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED,  "Dimm stop" }, // might be button 2 as well
+    { Sensor::ModeScenes,           0x01, LEVEL_CLUSTER_ID, 0x02, 1,    S_BUTTON_3 + S_BUTTON_ACTION_HOLD,           "Step down" },
 */
 //  vendor specific
     // top button
@@ -134,24 +134,24 @@ static const Sensor::ButtonMap philipsDimmerSwitchMap[] = {
 static const Sensor::ButtonMap ikeaRemoteMap[] = {
 //    mode                          ep    cluster cmd   param button                                       name
     // big button
-    { Sensor::ModeColorTemperature, 0x01, 0x0006, 0x02, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "Toggle" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0005, 0x07, 2,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD,           "Setup 10s" },
+    { Sensor::ModeColorTemperature, 0x01, ONOFF_CLUSTER_ID, ONOFF_COMMAND_TOGGLE, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "Toggle" },
+    { Sensor::ModeColorTemperature, 0x01, SCENE_CLUSTER_ID, 0x07, 2,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD,           "Setup 10s" },
     // top button
-    { Sensor::ModeColorTemperature, 0x01, 0x0008, 0x06, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Step up (with on/off)" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0008, 0x05, 0,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD,           "Move up (with on/off)" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0008, 0x07, 0,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED,  "Stop_ (with on/off)" },
+    { Sensor::ModeColorTemperature, 0x01, LEVEL_CLUSTER_ID, 0x06, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Step up (with on/off)" },
+    { Sensor::ModeColorTemperature, 0x01, LEVEL_CLUSTER_ID, 0x05, 0,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD,           "Move up (with on/off)" },
+    { Sensor::ModeColorTemperature, 0x01, LEVEL_CLUSTER_ID, 0x07, 0,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED,  "Stop_ (with on/off)" },
     // bottom button
-    { Sensor::ModeColorTemperature, 0x01, 0x0008, 0x02, 1,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Step down" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0008, 0x01, 1,    S_BUTTON_3 + S_BUTTON_ACTION_HOLD,           "Move down" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0008, 0x03, 1,    S_BUTTON_3 + S_BUTTON_ACTION_LONG_RELEASED,  "Stop" },
+    { Sensor::ModeColorTemperature, 0x01, LEVEL_CLUSTER_ID, 0x02, 1,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Step down" },
+    { Sensor::ModeColorTemperature, 0x01, LEVEL_CLUSTER_ID, 0x01, 1,    S_BUTTON_3 + S_BUTTON_ACTION_HOLD,           "Move down" },
+    { Sensor::ModeColorTemperature, 0x01, LEVEL_CLUSTER_ID, 0x03, 1,    S_BUTTON_3 + S_BUTTON_ACTION_LONG_RELEASED,  "Stop" },
     // left button (non-standard)
-    { Sensor::ModeColorTemperature, 0x01, 0x0005, 0x07, 1,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Step ct colder" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0005, 0x08, 1,    S_BUTTON_4 + S_BUTTON_ACTION_HOLD,           "Mode ct colder" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0005, 0x09, 1,    S_BUTTON_4 + S_BUTTON_ACTION_LONG_RELEASED,  "Stop ct colder" },
+    { Sensor::ModeColorTemperature, 0x01, SCENE_CLUSTER_ID, 0x07, 1,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Step ct colder" },
+    { Sensor::ModeColorTemperature, 0x01, SCENE_CLUSTER_ID, 0x08, 1,    S_BUTTON_4 + S_BUTTON_ACTION_HOLD,           "Mode ct colder" },
+    { Sensor::ModeColorTemperature, 0x01, SCENE_CLUSTER_ID, 0x09, 1,    S_BUTTON_4 + S_BUTTON_ACTION_LONG_RELEASED,  "Stop ct colder" },
     // right button (non-standard)
-    { Sensor::ModeColorTemperature, 0x01, 0x0005, 0x07, 0,    S_BUTTON_5 + S_BUTTON_ACTION_SHORT_RELEASED, "Step ct warmer" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0005, 0x08, 0,    S_BUTTON_5 + S_BUTTON_ACTION_HOLD,           "Move ct warmer" },
-    { Sensor::ModeColorTemperature, 0x01, 0x0005, 0x09, 0,    S_BUTTON_5 + S_BUTTON_ACTION_LONG_RELEASED,  "Stop ct warmer" },
+    { Sensor::ModeColorTemperature, 0x01, SCENE_CLUSTER_ID, 0x07, 0,    S_BUTTON_5 + S_BUTTON_ACTION_SHORT_RELEASED, "Step ct warmer" },
+    { Sensor::ModeColorTemperature, 0x01, SCENE_CLUSTER_ID, 0x08, 0,    S_BUTTON_5 + S_BUTTON_ACTION_HOLD,           "Move ct warmer" },
+    { Sensor::ModeColorTemperature, 0x01, SCENE_CLUSTER_ID, 0x09, 0,    S_BUTTON_5 + S_BUTTON_ACTION_LONG_RELEASED,  "Stop ct warmer" },
     // end
     { Sensor::ModeNone,             0x00, 0x0000, 0x00, 0,    0,                                           0 }
 };
@@ -159,17 +159,17 @@ static const Sensor::ButtonMap ikeaRemoteMap[] = {
 static const Sensor::ButtonMap ikeaDimmerMap[] = {
 //    mode                ep    cluster cmd   param button                                       name
     // on
-    { Sensor::ModeDimmer, 0x01, 0x0008, 0x04, 255,  S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "Move to level 255 (with on/off)" },
+    { Sensor::ModeDimmer, 0x01, LEVEL_CLUSTER_ID, 0x04, 255,  S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "Move to level 255 (with on/off)" },
     // dim up
-    { Sensor::ModeDimmer, 0x01, 0x0008, 0x05, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Move up (with on/off)" },
-    // { Sensor::ModeDimmer, 0x01, 0x0008, 0x05, 0,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD,           "Move up (with on/off)" },
-    // { Sensor::ModeDimmer, 0x01, 0x0008, 0x07, 0,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED,  "Stop_ up (with on/off)" },
+    { Sensor::ModeDimmer, 0x01, LEVEL_CLUSTER_ID, 0x05, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Move up (with on/off)" },
+    // { Sensor::ModeDimmer, 0x01, LEVEL_CLUSTER_ID, 0x05, 0,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD,           "Move up (with on/off)" },
+    // { Sensor::ModeDimmer, 0x01, LEVEL_CLUSTER_ID, 0x07, 0,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED,  "Stop_ up (with on/off)" },
     // dim down
-    { Sensor::ModeDimmer, 0x01, 0x0008, 0x01, 1,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Move down" },
-    // { Sensor::ModeDimmer, 0x01, 0x0008, 0x01, 1,    S_BUTTON_3 + S_BUTTON_ACTION_HOLD,           "Move down" },
-    // { Sensor::ModeDimmer, 0x01, 0x0008, 0x07, 1,    S_BUTTON_3 + S_BUTTON_ACTION_LONG_RELEASED,  "Stop_ down (with on/off)" },
+    { Sensor::ModeDimmer, 0x01, LEVEL_CLUSTER_ID, 0x01, 1,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Move down" },
+    // { Sensor::ModeDimmer, 0x01, LEVEL_CLUSTER_ID, 0x01, 1,    S_BUTTON_3 + S_BUTTON_ACTION_HOLD,           "Move down" },
+    // { Sensor::ModeDimmer, 0x01, LEVEL_CLUSTER_ID, 0x07, 1,    S_BUTTON_3 + S_BUTTON_ACTION_LONG_RELEASED,  "Stop_ down (with on/off)" },
     // off
-    { Sensor::ModeDimmer, 0x01, 0x0008, 0x04, 0,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Move to level 0 (with on/off)" },
+    { Sensor::ModeDimmer, 0x01, LEVEL_CLUSTER_ID, 0x04, 0,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Move to level 0 (with on/off)" },
     // end
     { Sensor::ModeNone,             0x00, 0x0000, 0x00, 0,    0,                                           0 }
 };
@@ -178,7 +178,7 @@ static const Sensor::ButtonMap ikeaDimmerMap[] = {
 static const Sensor::ButtonMap ikeaMotionSensorMap[] = {
 //    mode                          ep    cluster cmd   param button                                       name
 // presence event
-    { Sensor::ModeScenes,           0x01, 0x0006, 0x42, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "On with timed off" },
+    { Sensor::ModeScenes,           0x01, ONOFF_CLUSTER_ID, 0x42, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "On with timed off" },
 
     // end
     { Sensor::ModeNone,             0x00, 0x0000, 0x00, 0,    0,                                           0 }
@@ -187,46 +187,61 @@ static const Sensor::ButtonMap ikeaMotionSensorMap[] = {
 static const Sensor::ButtonMap bjeSwitchMap[] = {
 //    mode                          ep    cluster cmd   param button                                       name
 //  1) row left button
-    { Sensor::ModeScenes,           0x0A, 0x0006, 0x00, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
-    { Sensor::ModeScenes,           0x0A, 0x0008, 0x02, 1,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD, "Step down" },
-
-    { Sensor::ModeScenes,           0x0A, 0x0008, 0x03, 0,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
+//  { Sensor::ModeScenes,           0x0A, ONOFF_CLUSTER_ID, ONOFF_COMMAND_OFF, 				0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
+    { Sensor::ModeScenes,           0x0A, SCENE_CLUSTER_ID, SCENE_COMMAND_RECALL_SCENE, 	1,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 1" },
+    { Sensor::ModeScenes,           0x0A, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			1,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD, "Step down" },
+    { Sensor::ModeScenes,           0x0A, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
+	
 //  1) row right button
-    { Sensor::ModeScenes,           0x0A, 0x0006, 0x01, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
-    { Sensor::ModeScenes,           0x0A, 0x0008, 0x06, 0,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD, "Step up (with on/off)" },
+//  { Sensor::ModeScenes,           0x0A, ONOFF_CLUSTER_ID, ONOFF_COMMAND_ON, 				0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
+	{ Sensor::ModeScenes,           0x0A, SCENE_CLUSTER_ID, SCENE_COMMAND_RECALL_SCENE, 	2,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 2" },
+    { Sensor::ModeScenes,           0x0A, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			0,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD, "Step up" },
+    { Sensor::ModeScenes,           0x0A, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
+	
 //  2) row left button
-    { Sensor::ModeScenes,           0x0B, 0x0006, 0x00, 0,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
-    { Sensor::ModeScenes,           0x0B, 0x0008, 0x02, 1,    S_BUTTON_3 + S_BUTTON_ACTION_HOLD, "Step down" },
-    { Sensor::ModeScenes,           0x0B, 0x0008, 0x03, 0,    S_BUTTON_3 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
-    { Sensor::ModeScenes,           0x0B, 0x0005, 0x05, 3,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 3" },
+//  { Sensor::ModeScenes,           0x0B, ONOFF_CLUSTER_ID, ONOFF_COMMAND_OFF, 				0,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
+    { Sensor::ModeScenes,           0x0B, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			1,    S_BUTTON_3 + S_BUTTON_ACTION_HOLD, "Step down" },
+    { Sensor::ModeScenes,           0x0B, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_3 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
+    { Sensor::ModeScenes,           0x0B, SCENE_CLUSTER_ID, SCENE_COMMAND_RECALL_SCENE, 	3,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 3" },
+
 //  2) row right button
-    { Sensor::ModeScenes,           0x0B, 0x0006, 0x01, 0,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
-    { Sensor::ModeScenes,           0x0B, 0x0008, 0x06, 0,    S_BUTTON_4 + S_BUTTON_ACTION_HOLD, "Step up (with on/off)" },
-    { Sensor::ModeScenes,           0x0B, 0x0005, 0x05, 4,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 4" },
-//  3) row right button
-    { Sensor::ModeScenes,           0x0C, 0x0005, 0x05, 5,    S_BUTTON_5 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 5" },
+//    { Sensor::ModeScenes,           0x0B, ONOFF_CLUSTER_ID, ONOFF_COMMAND_ON, 				0,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
+    { Sensor::ModeScenes,           0x0B, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			0,    S_BUTTON_4 + S_BUTTON_ACTION_HOLD, "Step up" },
+    { Sensor::ModeScenes,           0x0B, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_4 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
+    { Sensor::ModeScenes,           0x0B, SCENE_CLUSTER_ID, SCENE_COMMAND_RECALL_SCENE, 	4,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 4" },
+
 //  3) row left button
-    { Sensor::ModeScenes,           0x0C, 0x0005, 0x05, 6,    S_BUTTON_6 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 6" },
-//  4) row right button
-    { Sensor::ModeScenes,           0x0D, 0x0005, 0x05, 7,    S_BUTTON_7 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 7" },
+    { Sensor::ModeScenes,           0x0C, SCENE_CLUSTER_ID, SCENE_COMMAND_RECALL_SCENE, 	5,    S_BUTTON_5 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 5" },
+	{ Sensor::ModeScenes,           0x0C, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			1,    S_BUTTON_5 + S_BUTTON_ACTION_HOLD, "Step down" },
+    { Sensor::ModeScenes,           0x0C, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_5 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
+//  3) row right button
+    { Sensor::ModeScenes,           0x0C, SCENE_CLUSTER_ID, SCENE_COMMAND_RECALL_SCENE, 	6,    S_BUTTON_6 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 6" },
+	{ Sensor::ModeScenes,           0x0C, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			0,    S_BUTTON_6 + S_BUTTON_ACTION_HOLD, "Step up" },
+    { Sensor::ModeScenes,           0x0C, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_6 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
 //  4) row left button
-    { Sensor::ModeScenes,           0x0D, 0x0005, 0x05, 8,    S_BUTTON_8 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 8" },
+    { Sensor::ModeScenes,           0x0D, SCENE_CLUSTER_ID, SCENE_COMMAND_RECALL_SCENE, 	7,    S_BUTTON_7 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 7" },
+	{ Sensor::ModeScenes,           0x0D, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			1,    S_BUTTON_7 + S_BUTTON_ACTION_HOLD, "Step down" },
+    { Sensor::ModeScenes,           0x0D, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_7 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
+//  4) row right button
+    { Sensor::ModeScenes,           0x0D, SCENE_CLUSTER_ID, SCENE_COMMAND_RECALL_SCENE, 	8,    S_BUTTON_8 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 8" },
+	{ Sensor::ModeScenes,           0x0D, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			0,    S_BUTTON_8 + S_BUTTON_ACTION_HOLD, "Step up" },
+    { Sensor::ModeScenes,           0x0D, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_8 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
 
 /////////////////////////////////////////////////////////
 //  1) row left button
-    { Sensor::ModeDimmer,           0x0A, 0x0006, 0x00, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
-    { Sensor::ModeDimmer,           0x0A, 0x0008, 0x02, 1,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD, "Step down" },
-    { Sensor::ModeDimmer,           0x0A, 0x0008, 0x03, 0,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
+    { Sensor::ModeDimmer,           0x0A, ONOFF_CLUSTER_ID, ONOFF_COMMAND_OFF, 				0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
+    { Sensor::ModeDimmer,           0x0A, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			1,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD, "Step down" },
+    { Sensor::ModeDimmer,           0x0A, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
 //  1) row right button
-    { Sensor::ModeDimmer,           0x0A, 0x0006, 0x01, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
-    { Sensor::ModeDimmer,           0x0A, 0x0008, 0x06, 0,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD, "Step up (with on/off)" },
+    { Sensor::ModeDimmer,           0x0A, ONOFF_CLUSTER_ID, ONOFF_COMMAND_ON, 				0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
+    { Sensor::ModeDimmer,           0x0A, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP_WITH_ON_OFF, 0,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD, "Step up (with on/off)" },
 //  2) row left button
-    { Sensor::ModeDimmer,           0x0B, 0x0006, 0x00, 0,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
-    { Sensor::ModeDimmer,           0x0B, 0x0008, 0x02, 1,    S_BUTTON_3 + S_BUTTON_ACTION_HOLD, "Step down" },
-    { Sensor::ModeDimmer,           0x0B, 0x0008, 0x03, 0,    S_BUTTON_3 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
+    { Sensor::ModeDimmer,           0x0B, ONOFF_CLUSTER_ID, ONOFF_COMMAND_OFF, 				0,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
+    { Sensor::ModeDimmer,           0x0B, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			1,    S_BUTTON_3 + S_BUTTON_ACTION_HOLD, "Step down" },
+    { Sensor::ModeDimmer,           0x0B, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_3 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
 //  2) row right button
-    { Sensor::ModeDimmer,           0x0B, 0x0006, 0x01, 0,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
-    { Sensor::ModeDimmer,           0x0B, 0x0008, 0x06, 0,    S_BUTTON_4 + S_BUTTON_ACTION_HOLD, "Step up (with on/off)" },
+    { Sensor::ModeDimmer,           0x0B, ONOFF_CLUSTER_ID, ONOFF_COMMAND_ON, 				0,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
+    { Sensor::ModeDimmer,           0x0B, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP_WITH_ON_OFF, 0,    S_BUTTON_4 + S_BUTTON_ACTION_HOLD, "Step up (with on/off)" },
 
     // end
     { Sensor::ModeNone,             0x00, 0x0000, 0x00, 0,    0,                                           0 }
@@ -235,10 +250,10 @@ static const Sensor::ButtonMap bjeSwitchMap[] = {
 static const Sensor::ButtonMap xiaomiSwitchAq2Map[] = {
 //    mode                          ep    cluster cmd   param button                                       name
     // First button
-    { Sensor::ModeScenes,           0x01, 0x0006, 0x0a, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "Normal press" },
-    { Sensor::ModeScenes,           0x01, 0x0006, 0x0a, 2,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Double press" },
-    { Sensor::ModeScenes,           0x01, 0x0006, 0x0a, 3,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Triple press" },
-    { Sensor::ModeScenes,           0x01, 0x0006, 0x0a, 4,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Quad press" },
+    { Sensor::ModeScenes,           0x01, ONOFF_CLUSTER_ID, 0x0a, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "Normal press" },
+    { Sensor::ModeScenes,           0x01, ONOFF_CLUSTER_ID, 0x0a, 2,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Double press" },
+    { Sensor::ModeScenes,           0x01, ONOFF_CLUSTER_ID, 0x0a, 3,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Triple press" },
+    { Sensor::ModeScenes,           0x01, ONOFF_CLUSTER_ID, 0x0a, 4,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Quad press" },
 
     // end
     { Sensor::ModeNone,             0x00, 0x0000, 0x00, 0,    0,                                           0 }
@@ -247,17 +262,17 @@ static const Sensor::ButtonMap xiaomiSwitchAq2Map[] = {
 static const Sensor::ButtonMap ubisysD1Map[] = {
 //    mode                          ep    cluster cmd   param button                                       name
     // First button
-    { Sensor::ModeScenes,           0x02, 0x0006, 0x02, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "Toggle" },
-    { Sensor::ModeScenes,           0x02, 0x0008, 0x05, 0,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD, "Move up (with on/off)" },
-    { Sensor::ModeScenes,           0x02, 0x0008, 0x07, 0,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED, "Stop_ (with on/off)" },
-    { Sensor::ModeScenes,           0x02, 0x0008, 0x05, 1,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD, "Move down (with on/off)" },
-    { Sensor::ModeScenes,           0x02, 0x0008, 0x07, 1,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED, "Stop_ (with on/off)" },
+    { Sensor::ModeScenes,           0x02, ONOFF_CLUSTER_ID, ONOFF_COMMAND_TOGGLE, 0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "Toggle" },
+    { Sensor::ModeScenes,           0x02, LEVEL_CLUSTER_ID, 0x05, 0,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD, "Move up (with on/off)" },
+    { Sensor::ModeScenes,           0x02, LEVEL_CLUSTER_ID, 0x07, 0,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED, "Stop_ (with on/off)" },
+    { Sensor::ModeScenes,           0x02, LEVEL_CLUSTER_ID, 0x05, 1,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD, "Move down (with on/off)" },
+    { Sensor::ModeScenes,           0x02, LEVEL_CLUSTER_ID, 0x07, 1,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED, "Stop_ (with on/off)" },
     // Second button
-    { Sensor::ModeScenes,           0x03, 0x0006, 0x02, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Toggle" },
-    { Sensor::ModeScenes,           0x03, 0x0008, 0x05, 0,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD, "Move up (with on/off)" },
-    { Sensor::ModeScenes,           0x03, 0x0008, 0x07, 0,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED, "Stop_ (with on/off)" },
-    { Sensor::ModeScenes,           0x03, 0x0008, 0x05, 1,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD, "Move down (with on/off)" },
-    { Sensor::ModeScenes,           0x03, 0x0008, 0x07, 1,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED, "Stop_ (with on/off)" },
+    { Sensor::ModeScenes,           0x03, ONOFF_CLUSTER_ID, 0x02, 0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Toggle" },
+    { Sensor::ModeScenes,           0x03, LEVEL_CLUSTER_ID, 0x05, 0,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD, "Move up (with on/off)" },
+    { Sensor::ModeScenes,           0x03, LEVEL_CLUSTER_ID, 0x07, 0,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED, "Stop_ (with on/off)" },
+    { Sensor::ModeScenes,           0x03, LEVEL_CLUSTER_ID, 0x05, 1,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD, "Move down (with on/off)" },
+    { Sensor::ModeScenes,           0x03, LEVEL_CLUSTER_ID, 0x07, 1,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED, "Stop_ (with on/off)" },
     // end
     { Sensor::ModeNone,             0x00, 0x0000, 0x00, 0,    0,                                           0 }
 };
