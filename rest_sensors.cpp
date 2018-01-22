@@ -587,7 +587,7 @@ int DeRestPluginPrivate::updateSensor(const ApiRequest &req, ApiResponse &rsp)
     {
         if(!((pi.key() == "name") || (pi.key() == "modelid") || (pi.key() == "swversion")
              || (pi.key() == "type")  || (pi.key() == "uniqueid")  || (pi.key() == "manufacturername")
-             || (pi.key() == "state")  || (pi.key() == "config") || (pi.key() == "mode" ))
+             || (pi.key() == "state")  || (pi.key() == "config") || (pi.key() == "mode" )))
         {
             rsp.list.append(errorToMap(ERR_PARAMETER_NOT_AVAILABLE, QString("/sensors/%2").arg(pi.key()), QString("parameter, %1, not available").arg(pi.key())));
             rsp.httpStatus = HttpStatusBadRequest;

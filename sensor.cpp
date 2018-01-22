@@ -10,6 +10,7 @@
 
 #include "sensor.h"
 #include "json.h"
+#include "de_web_plugin_private.h"
 
 static const Sensor::ButtonMap deLightingSwitchMap[] = {
 //    mode                          ep    cluster cmd   param button                                       name
@@ -189,43 +190,43 @@ static const Sensor::ButtonMap bjeSwitchMap[] = {
 //  1) row left button
 //  { Sensor::ModeScenes,           0x0A, ONOFF_CLUSTER_ID, ONOFF_COMMAND_OFF, 				0,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
     { Sensor::ModeScenes,           0x0A, SCENE_CLUSTER_ID, SCENE_COMMAND_RECALL_SCENE, 	1,    S_BUTTON_1 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 1" },
-    { Sensor::ModeScenes,           0x0A, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			1,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD, "Step down" },
-    { Sensor::ModeScenes,           0x0A, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
+//    { Sensor::ModeScenes,           0x0A, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			1,    S_BUTTON_1 + S_BUTTON_ACTION_HOLD, "Step down" },
+//    { Sensor::ModeScenes,           0x0A, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_1 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
 	
 //  1) row right button
 //  { Sensor::ModeScenes,           0x0A, ONOFF_CLUSTER_ID, ONOFF_COMMAND_ON, 				0,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
-	{ Sensor::ModeScenes,           0x0A, SCENE_CLUSTER_ID, SCENE_COMMAND_RECALL_SCENE, 	2,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 2" },
-    { Sensor::ModeScenes,           0x0A, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			0,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD, "Step up" },
-    { Sensor::ModeScenes,           0x0A, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
+    { Sensor::ModeScenes,           0x0A, SCENE_CLUSTER_ID, SCENE_COMMAND_RECALL_SCENE, 	2,    S_BUTTON_2 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 2" },
+//    { Sensor::ModeScenes,           0x0A, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			0,    S_BUTTON_2 + S_BUTTON_ACTION_HOLD, "Step up" },
+//    { Sensor::ModeScenes,           0x0A, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_2 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
 	
 //  2) row left button
 //  { Sensor::ModeScenes,           0x0B, ONOFF_CLUSTER_ID, ONOFF_COMMAND_OFF, 				0,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Off" },
-    { Sensor::ModeScenes,           0x0B, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			1,    S_BUTTON_3 + S_BUTTON_ACTION_HOLD, "Step down" },
-    { Sensor::ModeScenes,           0x0B, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_3 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
+//    { Sensor::ModeScenes,           0x0B, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			1,    S_BUTTON_3 + S_BUTTON_ACTION_HOLD, "Step down" },
+//    { Sensor::ModeScenes,           0x0B, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_3 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
     { Sensor::ModeScenes,           0x0B, SCENE_CLUSTER_ID, SCENE_COMMAND_RECALL_SCENE, 	3,    S_BUTTON_3 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 3" },
 
 //  2) row right button
 //    { Sensor::ModeScenes,           0x0B, ONOFF_CLUSTER_ID, ONOFF_COMMAND_ON, 				0,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "On" },
-    { Sensor::ModeScenes,           0x0B, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			0,    S_BUTTON_4 + S_BUTTON_ACTION_HOLD, "Step up" },
-    { Sensor::ModeScenes,           0x0B, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_4 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
+//    { Sensor::ModeScenes,           0x0B, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			0,    S_BUTTON_4 + S_BUTTON_ACTION_HOLD, "Step up" },
+//    { Sensor::ModeScenes,           0x0B, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_4 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
     { Sensor::ModeScenes,           0x0B, SCENE_CLUSTER_ID, SCENE_COMMAND_RECALL_SCENE, 	4,    S_BUTTON_4 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 4" },
 
 //  3) row left button
     { Sensor::ModeScenes,           0x0C, SCENE_CLUSTER_ID, SCENE_COMMAND_RECALL_SCENE, 	5,    S_BUTTON_5 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 5" },
-	{ Sensor::ModeScenes,           0x0C, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			1,    S_BUTTON_5 + S_BUTTON_ACTION_HOLD, "Step down" },
-    { Sensor::ModeScenes,           0x0C, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_5 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
+//    { Sensor::ModeScenes,           0x0C, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			1,    S_BUTTON_5 + S_BUTTON_ACTION_HOLD, "Step down" },
+//    { Sensor::ModeScenes,           0x0C, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_5 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
 //  3) row right button
     { Sensor::ModeScenes,           0x0C, SCENE_CLUSTER_ID, SCENE_COMMAND_RECALL_SCENE, 	6,    S_BUTTON_6 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 6" },
-	{ Sensor::ModeScenes,           0x0C, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			0,    S_BUTTON_6 + S_BUTTON_ACTION_HOLD, "Step up" },
-    { Sensor::ModeScenes,           0x0C, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_6 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
+//    { Sensor::ModeScenes,           0x0C, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			0,    S_BUTTON_6 + S_BUTTON_ACTION_HOLD, "Step up" },
+//    { Sensor::ModeScenes,           0x0C, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_6 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
 //  4) row left button
     { Sensor::ModeScenes,           0x0D, SCENE_CLUSTER_ID, SCENE_COMMAND_RECALL_SCENE, 	7,    S_BUTTON_7 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 7" },
-	{ Sensor::ModeScenes,           0x0D, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			1,    S_BUTTON_7 + S_BUTTON_ACTION_HOLD, "Step down" },
-    { Sensor::ModeScenes,           0x0D, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_7 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
+//    { Sensor::ModeScenes,           0x0D, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			1,    S_BUTTON_7 + S_BUTTON_ACTION_HOLD, "Step down" },
+//    { Sensor::ModeScenes,           0x0D, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_7 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
 //  4) row right button
     { Sensor::ModeScenes,           0x0D, SCENE_CLUSTER_ID, SCENE_COMMAND_RECALL_SCENE, 	8,    S_BUTTON_8 + S_BUTTON_ACTION_SHORT_RELEASED, "Recall scene 8" },
-	{ Sensor::ModeScenes,           0x0D, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			0,    S_BUTTON_8 + S_BUTTON_ACTION_HOLD, "Step up" },
-    { Sensor::ModeScenes,           0x0D, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_8 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
+//  { Sensor::ModeScenes,           0x0D, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STEP, 			0,    S_BUTTON_8 + S_BUTTON_ACTION_HOLD, "Step up" },
+//    { Sensor::ModeScenes,           0x0D, LEVEL_CLUSTER_ID, LEVEL_COMMAND_STOP, 			0,    S_BUTTON_8 + S_BUTTON_ACTION_LONG_RELEASED, "Stop" },
 
 /////////////////////////////////////////////////////////
 //  1) row left button

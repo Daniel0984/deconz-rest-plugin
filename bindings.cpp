@@ -1006,7 +1006,13 @@ void DeRestPluginPrivate::checkSensorBindingsForAttributeReporting(Sensor *senso
         sensor->modelId() == QLatin1String("SML001") ||
         sensor->modelId().startsWith(QLatin1String("RWL02")) ||
         // IKEA
-        sensor->modelId().startsWith(QLatin1String("TRADFRI")))
+        sensor->modelId().startsWith(QLatin1String("TRADFRI")) ||
+
+        sensor->modelId() == QLatin1String("RB01") ||
+        sensor->modelId() == QLatin1String("RM01")
+)
+
+
     {
         endDeviceSupported = true;
         sensor->setMgmtBindSupported(false);
@@ -1237,23 +1243,9 @@ void DeRestPluginPrivate::checkSensorBindingsForClientClusters(Sensor *sensor)
     else if (sensor->modelId() == QLatin1String("RB01") ||
              sensor->modelId() == QLatin1String("RM01"))
     {
-        quint8 firstEp = 0x0A;
-
-        // the model RM01 might have an relais or dimmer switch on endpoint 0x12
-        // in that case the endpoint 0x0A has no function
-        if (getLightNodeForAddress(sensor->address(), 0x12))
-        {
-            firstEp = 0x0B;
-        }
-
-        if (sensor->fingerPrint().endpoint == firstEp)
-        {
-            clusters.push_back(LEVEL_CLUSTER_ID);
-        }
-        else if (sensor->fingerPrint().endpoint > firstEp)
-        {
-            clusters.push_back(SCENE_CLUSTER_ID);
-        }
+        clusters.push_back(ONOFF_CLUSTER_ID);
+        clusters.push_back(LEVEL_CLUSTER_ID);
+	clusters.push_back(SCENE_CLUSTER_ID);
     }
     // IKEA Trådfri dimmer
     else if (sensor->modelId() == QLatin1String("TRADFRI wireless dimmer"))
@@ -1384,6 +1376,7 @@ void DeRestPluginPrivate::checkSensorGroup(Sensor *sensor)
                 }
             }
         }
+	group = 0;
     }
     else if (sensor->modelId() == QLatin1String("ZGPSWITCH"))
     {
